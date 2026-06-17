@@ -1,0 +1,682 @@
+
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI News Digest</title>
+<style>
+  body {
+    margin: 0;
+    padding: 0;
+    background-color: #f3f4f6;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    color: #1f2937;
+    line-height: 1.6;
+  }
+  .container {
+    max-width: 680px;
+    margin: 0 auto;
+    background-color: #ffffff;
+  }
+  .header {
+    background: linear-gradient(135deg, #0f0f23 0%, #1a1a2e 50%, #16213e 100%);
+    color: #ffffff;
+    padding: 32px 24px;
+    text-align: center;
+  }
+  .header h1 {
+    margin: 0 0 8px 0;
+    font-size: 24px;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+  }
+  .header .date {
+    font-size: 14px;
+    color: #94a3b8;
+    margin: 0;
+  }
+  .briefing {
+    background-color: #f0f9ff;
+    border-left: 4px solid #3b82f6;
+    padding: 16px 20px;
+    margin: 24px;
+    font-size: 15px;
+    color: #1e40af;
+    border-radius: 0 8px 8px 0;
+  }
+  .category {
+    padding: 20px 24px 0 24px;
+  }
+  .category-name {
+    font-size: 18px;
+    font-weight: 700;
+    color: #111827;
+    border-bottom: 2px solid #e5e7eb;
+    padding-bottom: 8px;
+    margin: 0 0 16px 0;
+  }
+  .story-card {
+    background-color: #f9fafb;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    padding: 16px 20px;
+    margin-bottom: 12px;
+  }
+  .story-card:hover {
+    border-color: #cbd5e1;
+  }
+  .story-headline {
+    margin: 0 0 8px 0;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1.4;
+  }
+  .story-headline a {
+    color: #1d4ed8;
+    text-decoration: none;
+  }
+  .story-headline a:hover {
+    text-decoration: underline;
+  }
+  .story-summary {
+    margin: 0 0 10px 0;
+    font-size: 14px;
+    color: #4b5563;
+    line-height: 1.5;
+  }
+  .story-why {
+    font-size: 13px;
+    color: #6b7280;
+    font-style: italic;
+    margin: 0 0 8px 0;
+    padding-left: 12px;
+    border-left: 2px solid #d1d5db;
+  }
+  .signal-badge {
+    display: inline-block;
+    padding: 2px 10px;
+    border-radius: 9999px;
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  .signal-high {
+    background-color: #fef2f2;
+    color: #dc2626;
+    border: 1px solid #fecaca;
+  }
+  .signal-medium {
+    background-color: #fffbeb;
+    color: #d97706;
+    border: 1px solid #fde68a;
+  }
+  .signal-low {
+    background-color: #f0fdf4;
+    color: #16a34a;
+    border: 1px solid #bbf7d0;
+  }
+
+  /* Analytics Dashboard */
+  .analytics-dashboard {
+    margin: 24px;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    overflow: hidden;
+    background-color: #ffffff;
+  }
+  .analytics-header {
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+    color: #f8fafc;
+    padding: 14px 20px;
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: 0.3px;
+  }
+
+  /* Signal Density */
+  .signal-density-section {
+    padding: 16px 20px;
+    border-bottom: 1px solid #f1f5f9;
+  }
+  .signal-density-label {
+    font-size: 12px;
+    font-weight: 600;
+    color: #64748b;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin: 0 0 8px 0;
+  }
+  .signal-density-bar-bg {
+    background-color: #e2e8f0;
+    border-radius: 6px;
+    height: 10px;
+    width: 100%;
+    overflow: hidden;
+  }
+  .signal-density-bar-fill {
+    height: 100%;
+    border-radius: 6px;
+  }
+  .density-fill-high {
+    background: linear-gradient(90deg, #3b82f6, #2563eb);
+  }
+  .density-fill-mid {
+    background: linear-gradient(90deg, #8b5cf6, #7c3aed);
+  }
+  .density-fill-low {
+    background: linear-gradient(90deg, #94a3b8, #64748b);
+  }
+  .signal-density-meta {
+    font-size: 12px;
+    color: #64748b;
+    margin: 6px 0 0 0;
+  }
+
+  /* Movers */
+  .movers-section {
+    padding: 16px 20px;
+    border-bottom: 1px solid #f1f5f9;
+  }
+  .movers-section-title {
+    font-size: 12px;
+    font-weight: 600;
+    color: #64748b;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin: 0 0 10px 0;
+  }
+  .movers-grid {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  .movers-grid td {
+    padding: 0;
+    vertical-align: top;
+  }
+  .movers-col {
+    width: 50%;
+  }
+  .movers-col-left {
+    padding-right: 8px;
+  }
+  .movers-col-right {
+    padding-left: 8px;
+  }
+  .mover-direction-label {
+    font-size: 13px;
+    font-weight: 700;
+    margin: 0 0 8px 0;
+  }
+  .mover-rising-label {
+    color: #059669;
+  }
+  .mover-falling-label {
+    color: #6b7280;
+  }
+  .mover-item {
+    padding: 6px 0;
+    border-bottom: 1px solid #f8fafc;
+  }
+  .mover-item:last-child {
+    border-bottom: none;
+  }
+  .mover-topic-label {
+    font-size: 13px;
+    font-weight: 600;
+    color: #1f2937;
+    margin: 0 0 2px 0;
+    line-height: 1.3;
+  }
+  .mover-meta {
+    font-size: 11px;
+    color: #94a3b8;
+    margin: 0;
+    line-height: 1.4;
+  }
+  .mover-sparkline {
+    font-family: 'Courier New', monospace;
+    font-size: 11px;
+    letter-spacing: 0px;
+    color: #64748b;
+  }
+  .mover-ratio-rising {
+    color: #059669;
+    font-weight: 700;
+  }
+  .mover-ratio-falling {
+    color: #94a3b8;
+    font-weight: 600;
+  }
+
+  /* Entity Rankings */
+  .entity-section {
+    padding: 16px 20px;
+    border-bottom: 1px solid #f1f5f9;
+  }
+  .entity-section-title {
+    font-size: 12px;
+    font-weight: 600;
+    color: #64748b;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin: 0 0 10px 0;
+  }
+  .entity-item {
+    margin-bottom: 8px;
+  }
+  .entity-item:last-child {
+    margin-bottom: 0;
+  }
+  .entity-name {
+    font-size: 13px;
+    font-weight: 600;
+    color: #1f2937;
+    margin: 0 0 3px 0;
+  }
+  .entity-bar-row {
+    display: table;
+    width: 100%;
+  }
+  .entity-bar-bg {
+    display: table-cell;
+    vertical-align: middle;
+  }
+  .entity-bar-track {
+    background-color: #f1f5f9;
+    border-radius: 4px;
+    height: 8px;
+    overflow: hidden;
+  }
+  .entity-bar-fill {
+    height: 100%;
+    border-radius: 4px;
+    background: linear-gradient(90deg, #8b5cf6, #6d28d9);
+  }
+  .entity-count {
+    display: table-cell;
+    vertical-align: middle;
+    padding-left: 10px;
+    font-size: 12px;
+    font-weight: 700;
+    color: #6d28d9;
+    white-space: nowrap;
+    width: 40px;
+    text-align: right;
+  }
+  .entity-connected {
+    font-size: 11px;
+    color: #94a3b8;
+    margin: 2px 0 0 0;
+  }
+
+  /* Dashboard Footer */
+  .analytics-footer {
+    padding: 10px 20px;
+    text-align: center;
+    font-size: 11px;
+    color: #94a3b8;
+    background-color: #f8fafc;
+  }
+
+  .footer {
+    background-color: #f9fafb;
+    border-top: 1px solid #e5e7eb;
+    padding: 16px 24px;
+    text-align: center;
+    font-size: 12px;
+    color: #9ca3af;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <h1>AI News Digest</h1>
+    <p class="date">June 17, 2026</p>
+  </div>
+
+  
+  <div class="briefing">
+    Today&#39;s AI news is dominated by massive industry consolidation and infrastructure maturation, headlined by SpaceX&#39;s blockbuster $60B acquisition of Cursor and Anthropic&#39;s last-minute retreat on Claude Agent SDK pricing changes. Meanwhile, the agent development ecosystem is rapidly professionalizing, with open-source meta-harnesses like Databricks&#39; Omnigent emerging to orchestrate multi-agent systems and new frameworks solidifying context engineering as a core discipline. Simultaneously, AI&#39;s integration into high-stakes real-world environments continues to accelerate, highlighted by the Pentagon&#39;s boasts of using AI for mandated reporting and new enterprise &#39;super agents&#39; entering the market.
+  </div>
+  
+
+  
+  <div class="category">
+    <h2 class="category-name">Industry &amp; Applications</h2>
+
+    
+    <div class="story-card">
+      <p class="story-headline">
+        <a href="https://arstechnica.com/ai/2026/06/spacex-will-acquire-coding-tool-cursor-to-compete-with-anthropic-openai/">SpaceX to Acquire AI Coding Platform Cursor for $60 Billion</a>
+      </p>
+      <p class="story-summary">SpaceX has announced a massive $60 billion deal to acquire Cursor, the leading AI-native coding platform. The acquisition signals a major convergence of aerospace, frontier tech, and AI development tools as SpaceX moves to compete directly with vertically integrated AI labs like Anthropic and OpenAI.</p>
+      <p class="story-why">&quot;This represents one of the largest acquisitions in tech history and fundamentally alters the landscape of AI coding tools, tying the premier agent harness directly to Musk&#39;s broader technological ecosystem.&quot;</p>
+      <span class="signal-badge signal-high">high</span>
+    </div>
+    
+    <div class="story-card">
+      <p class="story-headline">
+        <a href="https://arstechnica.com/ai/2026/06/anthropic-pauses-token-based-billing-for-its-claude-agent-sdk/">Anthropic Backtracks on Claude Agent SDK Pricing Overhaul</a>
+      </p>
+      <p class="story-summary">Anthropic abruptly paused plans to shift Claude Agent SDK usage to costly API-based billing, a move that would have severely increased expenses for power users and third-party apps. The company will instead maintain the current system, allowing SDK usage to draw from users&#39; existing subscription limits.</p>
+      <p class="story-why">&quot;The retreat highlights the fierce competition to retain developers building agentic applications, ensuring that third-party harnesses and tools built on Claude remain economically viable.&quot;</p>
+      <span class="signal-badge signal-high">high</span>
+    </div>
+    
+    <div class="story-card">
+      <p class="story-headline">
+        <a href="https://arstechnica.com/ai/2026/06/leaked-financial-docs-show-openai-is-losing-billions-of-dollars-a-year/">Leaked Financials Reveal OpenAI&#39;s Massive Annual Losses</a>
+      </p>
+      <p class="story-summary">Newly leaked audited financial documents show that OpenAI is burning billions of dollars annually, with massive R&amp;D and operational expenses vastly outpacing its rapidly growing revenues. The scale of the losses underscores the immense capital intensity required to maintain frontier AI development and compete in the agent space.</p>
+      <p class="story-why">&quot;The financial realities of running a frontier AI lab highlight why ecosystem lock-in, enterprise partnerships, and IPO preparations are becoming critical survival strategies.&quot;</p>
+      <span class="signal-badge signal-medium">medium</span>
+    </div>
+    
+    <div class="story-card">
+      <p class="story-headline">
+        <a href="https://www.theneurondaily.com/p/cursor-s-60b-spacex-deal-is-official?_bhlid=480ef64dddb996f4008b62ade0863541bb69a493&amp;utm_campaign=cursor-s-60b-spacex-deal-is-official&amp;utm_medium=newsletter&amp;utm_source=www.theneurondaily.com#beehiiv-audio-tts-id">The Neuron Daily: Cursor Deal, Qwen Robots, and 12M-Token Models</a>
+      </p>
+      <p class="story-summary">This daily newsletter covers the confirmed SpaceX-Cursor deal, alongside new developments in physical AI agents like Qwen robots. It also highlights the release of SubQ&#39;s new 12-million-token context model.</p>
+      <p class="story-why">&quot;Provides a quick roundup of secondary announcements following the major industry news of the day, showcasing the expansion of AI into physical robotics and ultra-long context windows.&quot;</p>
+      <span class="signal-badge signal-low">low</span>
+    </div>
+    
+  </div>
+  
+  <div class="category">
+    <h2 class="category-name">Developer Tools &amp; Infrastructure</h2>
+
+    
+    <div class="story-card">
+      <p class="story-headline">
+        <a href="https://github.com/andrewyng/aisuite">Andrew Ng Ships &#39;OpenCoworker&#39; Desktop Agent Harness</a>
+      </p>
+      <p class="story-summary">Andrew Ng has released OpenCoworker, an open-source desktop AI agent built on the aisuite framework that can read local files, send emails, and create deliverables with scheduled automations. The release serves as a reference architecture for building multi-model agent harnesses with built-in toolkits and MCP support.</p>
+      <p class="story-why">&quot;This provides a highly accessible, model-agnostic blueprint for developers looking to build local-first, agentic applications that require deep system access and orchestration.&quot;</p>
+      <span class="signal-badge signal-high">high</span>
+    </div>
+    
+    <div class="story-card">
+      <p class="story-headline">
+        <a href="https://github.blog/ai-and-ml/github-copilot/what-are-git-worktrees-and-why-should-i-use-them/">GitHub Copilot Adopts Git Worktrees for Parallel Agent Sessions</a>
+      </p>
+      <p class="story-summary">GitHub highlights how AI-driven development has popularized the use of Git worktrees to support parallel coding sessions. The GitHub Copilot app now defaults to using worktrees, allowing human developers and agents to work on multiple branches simultaneously without disrupting local environments.</p>
+      <p class="story-why">&quot;This showcases how traditional developer infrastructure is adapting to agent-driven workflows, moving from sequential coding to highly parallelized execution environments.&quot;</p>
+      <span class="signal-badge signal-high">high</span>
+    </div>
+    
+    <div class="story-card">
+      <p class="story-headline">
+        <a href="https://watch.getcontrast.io/register/context-maturity?utm_source=alphasignal&amp;utm_medium=email&amp;utm_campaign=primary">Defining the 8 Levels of Context Maturity in Agent Engineering</a>
+      </p>
+      <p class="story-summary">A new framework outlines the evolution of context engineering across eight maturity levels, from basic IDE tab completion to autonomous background agent teams. The model helps teams identify where they are stuck—often between manual rules files and dynamic, permission-aware context layers—and what is needed to achieve true agent autonomy.</p>
+      <p class="story-why">&quot;Context engineering is becoming the defining discipline for harness builders; this framework formalizes the transition from manual prompt engineering to dynamic, agent-managed context.&quot;</p>
+      <span class="signal-badge signal-high">high</span>
+    </div>
+    
+  </div>
+  
+  <div class="category">
+    <h2 class="category-name">AI Models &amp; Research</h2>
+
+    
+    <div class="story-card">
+      <p class="story-headline">
+        <a href="https://arxiv.org/abs/2604.14228">Study Reveals Claude Code is 98% Traditional Software Engineering</a>
+      </p>
+      <p class="story-summary">A deep architectural analysis of Claude Code&#39;s source code reveals that the system is 98% traditional software scaffolding and 2% AI model. The study highlights how the true complexity of agentic systems lies in the harness—permission layers, context compaction, and subagent delegation—rather than the core inference loop.</p>
+      <p class="story-why">&quot;This empirically validates the &#39;big harness, small model&#39; thesis, proving that engineering surrounding the model is currently the primary bottleneck and competitive moat in agent development.&quot;</p>
+      <span class="signal-badge signal-high">high</span>
+    </div>
+    
+    <div class="story-card">
+      <p class="story-headline">
+        <a href="https://openai.com/index/deployment-simulation">OpenAI Unveils &#39;Deployment Simulation&#39; for Pre-Release Safety</a>
+      </p>
+      <p class="story-summary">OpenAI has introduced Deployment Simulation, a new methodology using real conversation data to predict how AI models will behave in the wild before they are officially released. The technique aims to improve the accuracy of safety evaluations and catch emergent behaviors early.</p>
+      <p class="story-why">&quot;As agents gain autonomous capabilities, simulating deployment environments becomes critical for anticipating coordination failures, security vulnerabilities, and safety regressions.&quot;</p>
+      <span class="signal-badge signal-medium">medium</span>
+    </div>
+    
+    <div class="story-card">
+      <p class="story-headline">
+        <a href="https://huggingface.co/MiniMaxAI/MiniMax-M3">MiniMax Releases Open-Weights M3: A 428B Native Multimodal Agent Model</a>
+      </p>
+      <p class="story-summary">MiniMax has published the weights for M3, a native multimodal model with a 1-million-token context window and MiniMax Sparse Attention (MSA). The model is specifically tuned for coding and long-horizon agentic cowork tasks, claiming massive decoding speedups over its predecessor.</p>
+      <p class="story-why">&quot;The release of highly optimized, open-weight models focused on agentic tasks puts pressure on closed labs and gives harness developers powerful new local options for long-context workflows.&quot;</p>
+      <span class="signal-badge signal-medium">medium</span>
+    </div>
+    
+  </div>
+  
+  <div class="category">
+    <h2 class="category-name">Bluesky Highlights</h2>
+
+    
+    <div class="story-card">
+      <p class="story-headline">
+        <a href="https://blog.dfeldman.co/the-joy-of-tech-a-different-path-for-products-people-ai-df122b28764e">The Joy of Tech: A Different Path for Products, People, and AI</a>
+      </p>
+      <p class="story-summary">Dave Feldman explores an alternative philosophy for building technology products that centers on human joy and meaningful experiences rather than pure efficiency or AI-driven automation.</p>
+      <p class="story-why">&quot;As AI reshapes product development, this perspective offers a human-centric counterweight to the prevailing automation-first mindset, arguing for tech that enhances rather than replaces human capability.&quot;</p>
+      <span class="signal-badge signal-medium">medium</span>
+    </div>
+    
+    <div class="story-card">
+      <p class="story-headline">
+        <a href="https://bsky.app/profile/43081j.com/post/3mofxc5asls25">CodeRabbit Sponsors e18e: AI Code Review Meets Slop Reduction</a>
+      </p>
+      <p class="story-summary">CodeRabbit has begun sponsoring the e18e project, with James noting that AI code review is a prime candidate for applying e18e&#39;s principles around reducing code bloat and &quot;slop.&quot;</p>
+      <p class="story-why">&quot;The convergence of AI-powered code review with anti-bloat tooling signals a growing awareness that AI-assisted development needs guardrails to prevent generating low-quality, unnecessary code.&quot;</p>
+      <span class="signal-badge signal-medium">medium</span>
+    </div>
+    
+    <div class="story-card">
+      <p class="story-headline">
+        <a href="https://bsky.app/profile/kevinpowell.co/post/3mog365skfk2d">Every CSS Feature Was Once &#39;Overstepping Its Bounds&#39;</a>
+      </p>
+      <p class="story-summary">Kevin Powell shares a CSS Day talk anecdote where developers complained about CSS adding logic-based styling capabilities, drawing a parallel to similar complaints when :hover was first introduced.</p>
+      <p class="story-why">&quot;This pattern of resistance to new platform capabilities repeats throughout web history, and understanding it helps developers embrace emerging standards rather than fighting inevitable evolution.&quot;</p>
+      <span class="signal-badge signal-medium">medium</span>
+    </div>
+    
+  </div>
+  
+  <div class="category">
+    <h2 class="category-name">AI Twitter/X Recap</h2>
+
+    
+    <div class="story-card">
+      <p class="story-headline">
+        <a href="https://x.com/ml_angelopoulos/status/2066969005856829824">New Contender Beats Claude Opus 4.8 in Frontend Coding</a>
+      </p>
+      <p class="story-summary">An unnamed or newly released model has reportedly outperformed all versions of Anthropic&#39;s Opus models, including version 4.8, in a specialized frontend coding benchmark.</p>
+      <p class="story-why">&quot;Anthropic&#39;s Claude models have largely been considered the gold standard for coding tasks. This development suggests a rapidly closing gap among frontier models in the software engineering space.&quot;</p>
+      <span class="signal-badge signal-high">high</span>
+    </div>
+    
+    <div class="story-card">
+      <p class="story-headline">
+        <a href="https://x.com/ProximalHQ/status/2066939701026787583">Benchmarking Frontier Models on Real-World Software Engineering</a>
+      </p>
+      <p class="story-summary">A new benchmark or evaluation platform called &#39;FrontierSWE&#39; has been released to test the capabilities of AI models on complex software engineering tasks.</p>
+      <p class="story-why">&quot;Evaluating AI agents on realistic, end-to-end software development workflows is critical for understanding their actual utility in enterprise environments and moving beyond basic LeetCode-style interview questions.&quot;</p>
+      <span class="signal-badge signal-high">high</span>
+    </div>
+    
+    <div class="story-card">
+      <p class="story-headline">
+        <a href="https://x.com/arena/status/2066943450914943025">LMSYS Launches &#39;Agent Arena&#39; and &#39;Design Arena&#39; Leaderboards</a>
+      </p>
+      <p class="story-summary">LMSYS (Chatbot Arena) has expanded its popular crowd-sourced evaluation platform with new dedicated arenas for testing AI Agents and Design/Creative capabilities.</p>
+      <p class="story-why">&quot;As AI capabilities expand beyond text generation into autonomous action and visual design, new evaluation frameworks are essential. These arenas will help establish a reliable, human-preference-based pecking order for these emerging use cases.&quot;</p>
+      <span class="signal-badge signal-high">high</span>
+    </div>
+    
+  </div>
+  
+
+  
+  <div class="analytics-dashboard">
+    <div class="analytics-header">📊 This Week in AI</div>
+
+    
+    <div class="signal-density-section">
+      <p class="signal-density-label">📡 Signal Density</p>
+      
+      
+        
+      
+      <div class="signal-density-bar-bg">
+        <div class="signal-density-bar-fill density-fill-mid" style="width:47%"></div>
+      </div>
+      <p class="signal-density-meta">
+        16 stories today
+        · ▼ 6% below average
+         (17 avg)
+      </p>
+    </div>
+    
+
+    
+    <div class="movers-section">
+      <p class="movers-section-title">🔥 Top Movers</p>
+      <table class="movers-grid"><tr>
+        
+        <td class="movers-col movers-col-left">
+          <p class="mover-direction-label mover-rising-label">▲ Rising</p>
+          
+          <div class="mover-item">
+            <p class="mover-topic-label">Agentic Infrastructure Maturation</p>
+            <p class="mover-meta">
+              <span class="mover-sparkline">▃▃█▅▂▄▄▄▃▅▂▄▅▄▄█▂▁▃▄▆▅▄▃▁▁▅▅▅▄▂▂▆▃▅▅▆</span>
+              · <span class="mover-ratio-rising">1.3x</span>
+              · 448 mentions
+            </p>
+          </div>
+          
+          <div class="mover-item">
+            <p class="mover-topic-label">AI IPO Race</p>
+            <p class="mover-meta">
+              <span class="mover-sparkline">▁▃▄█</span>
+              · <span class="mover-ratio-rising">1.2x</span>
+              · 59 mentions
+            </p>
+          </div>
+          
+          <div class="mover-item">
+            <p class="mover-topic-label">AI-Powered Developer Tooling</p>
+            <p class="mover-meta">
+              <span class="mover-sparkline">▅▁█</span>
+              · <span class="mover-ratio-rising">1.2x</span>
+              · 50 mentions
+            </p>
+          </div>
+          
+        </td>
+        
+        
+      </tr></table>
+    </div>
+    
+
+    
+    <div class="entity-section">
+      <p class="entity-section-title">🏆 Key Players</p>
+      
+      <div class="entity-item">
+        <p class="entity-name">anthropic</p>
+        <div class="entity-bar-row">
+          <div class="entity-bar-bg">
+            <div class="entity-bar-track">
+              <div class="entity-bar-fill" style="width:100%"></div>
+            </div>
+          </div>
+          <div class="entity-count">19</div>
+        </div>
+        
+        <p class="entity-connected">Agentic Infrastructure Maturation, Agentic Coding Models, US Government Intervention in AI Model Deployment</p>
+        
+      </div>
+      
+      <div class="entity-item">
+        <p class="entity-name">openai</p>
+        <div class="entity-bar-row">
+          <div class="entity-bar-bg">
+            <div class="entity-bar-track">
+              <div class="entity-bar-fill" style="width:89%"></div>
+            </div>
+          </div>
+          <div class="entity-count">17</div>
+        </div>
+        
+        <p class="entity-connected">Agentic Infrastructure Maturation, Agentic Coding Models, US Government Intervention in AI Model Deployment</p>
+        
+      </div>
+      
+      <div class="entity-item">
+        <p class="entity-name">simon-willison</p>
+        <div class="entity-bar-row">
+          <div class="entity-bar-bg">
+            <div class="entity-bar-track">
+              <div class="entity-bar-fill" style="width:47%"></div>
+            </div>
+          </div>
+          <div class="entity-count">9</div>
+        </div>
+        
+        <p class="entity-connected">Agentic Infrastructure Maturation, Agentic Coding Models, Frontier Model Benchmark Records</p>
+        
+      </div>
+      
+      <div class="entity-item">
+        <p class="entity-name">google</p>
+        <div class="entity-bar-row">
+          <div class="entity-bar-bg">
+            <div class="entity-bar-track">
+              <div class="entity-bar-fill" style="width:42%"></div>
+            </div>
+          </div>
+          <div class="entity-count">8</div>
+        </div>
+        
+        <p class="entity-connected">Agentic Infrastructure Maturation, Multimodal Generative Models, Agentic Coding Models</p>
+        
+      </div>
+      
+      <div class="entity-item">
+        <p class="entity-name">claude-fable-5</p>
+        <div class="entity-bar-row">
+          <div class="entity-bar-bg">
+            <div class="entity-bar-track">
+              <div class="entity-bar-fill" style="width:42%"></div>
+            </div>
+          </div>
+          <div class="entity-count">8</div>
+        </div>
+        
+        <p class="entity-connected">US Government Intervention in AI Model Deployment, Frontier Model Benchmark Records, Claude Fable 5&#39;s Overbroad Safety Guardrails</p>
+        
+      </div>
+      
+    </div>
+    
+
+    <div class="analytics-footer">
+      248 topics tracked · 33 active
+      
+      
+       · 10 articles · 3 bluesky · 3 twitter
+      
+    </div>
+  </div>
+  
+
+  <div class="footer">
+    <p>Curated by AI News Aggregator</p>
+  </div>
+</div>
+</body>
+</html>
