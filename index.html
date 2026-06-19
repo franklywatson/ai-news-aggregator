@@ -19,7 +19,7 @@
     background-color: #ffffff;
   }
   .header {
-    background: linear-gradient(135deg, #0f0f23 0%, #1a1a2e 50%, #16213e 100%);
+    background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 100%);
     color: #ffffff;
     padding: 32px 24px;
     text-align: center;
@@ -125,198 +125,33 @@
     overflow: hidden;
     background-color: #ffffff;
   }
-  .analytics-header {
-    background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+  .analytics-title {
+    background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 100%);
     color: #f8fafc;
-    padding: 14px 20px;
-    font-size: 15px;
+    padding: 8px 16px;
+    font-size: 13px;
     font-weight: 700;
     letter-spacing: 0.3px;
   }
-
-  /* Signal Density */
-  .signal-density-section {
+  .analytics-section {
     padding: 16px 20px;
     border-bottom: 1px solid #f1f5f9;
   }
-  .signal-density-label {
-    font-size: 12px;
-    font-weight: 600;
-    color: #64748b;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    margin: 0 0 8px 0;
+  .analytics-section:last-child {
+    border-bottom: none;
   }
-  .signal-density-bar-bg {
-    background-color: #e2e8f0;
-    border-radius: 6px;
-    height: 10px;
-    width: 100%;
-    overflow: hidden;
-  }
-  .signal-density-bar-fill {
-    height: 100%;
-    border-radius: 6px;
-  }
-  .density-fill-high {
-    background: linear-gradient(90deg, #3b82f6, #2563eb);
-  }
-  .density-fill-mid {
-    background: linear-gradient(90deg, #8b5cf6, #7c3aed);
-  }
-  .density-fill-low {
-    background: linear-gradient(90deg, #94a3b8, #64748b);
-  }
-  .signal-density-meta {
-    font-size: 12px;
-    color: #64748b;
-    margin: 6px 0 0 0;
-  }
-
-  /* Movers */
-  .movers-section {
-    padding: 16px 20px;
-    border-bottom: 1px solid #f1f5f9;
-  }
-  .movers-section-title {
-    font-size: 12px;
-    font-weight: 600;
-    color: #64748b;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    margin: 0 0 10px 0;
-  }
-  .movers-grid {
+  .analytics-twocol {
     width: 100%;
     border-collapse: collapse;
   }
-  .movers-grid td {
-    padding: 0;
-    vertical-align: top;
-  }
-  .movers-col {
-    width: 50%;
-  }
-  .movers-col-left {
-    padding-right: 8px;
-  }
-  .movers-col-right {
-    padding-left: 8px;
-  }
-  .mover-direction-label {
-    font-size: 13px;
-    font-weight: 700;
-    margin: 0 0 8px 0;
-  }
-  .mover-rising-label {
-    color: #059669;
-  }
-  .mover-falling-label {
-    color: #6b7280;
-  }
-  .mover-item {
-    padding: 6px 0;
-    border-bottom: 1px solid #f8fafc;
-  }
-  .mover-item:last-child {
-    border-bottom: none;
-  }
-  .mover-topic-label {
-    font-size: 13px;
-    font-weight: 600;
-    color: #1f2937;
-    margin: 0 0 2px 0;
-    line-height: 1.3;
-  }
-  .mover-meta {
-    font-size: 11px;
-    color: #94a3b8;
-    margin: 0;
-    line-height: 1.4;
-  }
-  .mover-sparkline {
-    font-family: 'Courier New', monospace;
-    font-size: 11px;
-    letter-spacing: 0px;
-    color: #64748b;
-  }
-  .mover-ratio-rising {
-    color: #059669;
-    font-weight: 700;
-  }
-  .mover-ratio-falling {
-    color: #94a3b8;
-    font-weight: 600;
-  }
 
-  /* Entity Rankings */
-  .entity-section {
-    padding: 16px 20px;
-    border-bottom: 1px solid #f1f5f9;
-  }
-  .entity-section-title {
-    font-size: 12px;
-    font-weight: 600;
-    color: #64748b;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    margin: 0 0 10px 0;
-  }
-  .entity-item {
-    margin-bottom: 8px;
-  }
-  .entity-item:last-child {
-    margin-bottom: 0;
-  }
-  .entity-name {
-    font-size: 13px;
-    font-weight: 600;
-    color: #1f2937;
-    margin: 0 0 3px 0;
-  }
-  .entity-bar-row {
-    display: table;
-    width: 100%;
-  }
-  .entity-bar-bg {
-    display: table-cell;
-    vertical-align: middle;
-  }
-  .entity-bar-track {
-    background-color: #f1f5f9;
-    border-radius: 4px;
-    height: 8px;
-    overflow: hidden;
-  }
-  .entity-bar-fill {
-    height: 100%;
-    border-radius: 4px;
-    background: linear-gradient(90deg, #8b5cf6, #6d28d9);
-  }
-  .entity-count {
-    display: table-cell;
-    vertical-align: middle;
-    padding-left: 10px;
-    font-size: 12px;
-    font-weight: 700;
-    color: #6d28d9;
-    white-space: nowrap;
-    width: 40px;
-    text-align: right;
-  }
-  .entity-connected {
-    font-size: 11px;
-    color: #94a3b8;
-    margin: 2px 0 0 0;
-  }
-
-  /* Dashboard Footer */
   .analytics-footer {
-    padding: 10px 20px;
+    padding: 12px 20px;
     text-align: center;
-    font-size: 11px;
-    color: #94a3b8;
+    font-size: 12px;
+    color: #64748b;
     background-color: #f8fafc;
+    border-top: 1px solid #e2e8f0;
   }
 
   .footer {
@@ -333,12 +168,12 @@
 <div class="container">
   <div class="header">
     <h1>AI News Digest</h1>
-    <p class="date">June 18, 2026</p>
+    <p class="date">June 19, 2026</p>
   </div>
 
   
   <div class="briefing">
-    The AI landscape is undergoing a profound shift from standalone chatbots to orchestrated agent ecosystems, driven by breakthroughs in long-horizon models, harness engineering, and multi-agent tool calling. Simultaneously, unprecedented government interventions in model deployment and a rapidly closing gap between proprietary and open-source frontier models are reshaping the competitive and geopolitical dynamics of the industry.
+    Today&#39;s AI news is defined by a major regulatory shock as the US government forced Anthropic to take its most powerful models offline globally, establishing a sudden new precedent for state intervention in frontier AI. Meanwhile, the agentic ecosystem continues to mature rapidly, with new paradigms like harness engineering emerging to manage human-agent coding workflows, alongside the release of novel sparse-attention architectures and enterprise-grade agent security frameworks.
   </div>
   
 
@@ -349,28 +184,19 @@
     
     <div class="story-card">
       <p class="story-headline">
-        <a href="https://simonwillison.net/2026/Jun/17/glm-52/#atom-everything">GLM-5.2 Takes the Open-Weights Crown with 1M Context and Frontier Coding Abilities</a>
+        <a href="https://www.technologyreview.com/2026/06/19/1139313/a-startup-claims-it-broke-through-a-bottleneck-thats-holding-back-llms/">Subquadratic Emerges from Stealth with 12-Million-Token Sparse Attention Model</a>
       </p>
-      <p class="story-summary">Chinese AI lab Z.ai released GLM-5.2, a 753B parameter (40B active) Mixture-of-Experts model under an MIT license, claiming the top spot on the Artificial Analysis Intelligence Index for open-weights. The model features a stable 1-million-token context window and ranks second only to Claude Fable 5 on the Code Arena WebDev leaderboard, proving highly competitive for agentic coding workflows.</p>
-      <p class="story-why">&quot;GLM-5.2 demonstrates that open-weights models, particularly from Chinese labs, are rapidly closing the gap with proprietary frontier models in coding and long-horizon agentic tasks. Its MIT license and immense context window provide a critical, borderless alternative at a fraction of the cost of Western APIs.&quot;</p>
+      <p class="story-summary">Stealth startup Subquadratic claims to have solved the quadratic bottleneck of traditional transformers with SubQ, a new model utilizing dynamic sparse attention. Independent evaluations by Appen suggest the model matches frontier performance on coding tasks while processing up to 12 million tokens at a fraction of the traditional compute cost.</p>
+      <p class="story-why">&quot;If verified upon wider release, bypassing the computational limits of dense attention fundamentally alters the economics of processing massive context windows for long-horizon agentic tasks.&quot;</p>
       <span class="signal-badge signal-high">high</span>
     </div>
     
     <div class="story-card">
       <p class="story-headline">
-        <a href="https://openai.com/index/ai-chemist-improves-reaction">Near-Autonomous AI Chemist Improves Complex Drug Synthesis Reaction</a>
+        <a href="https://www.theneurondaily.com/p/openai-found-18-rare-diseases?_bhlid=3af28eecbcd6774023f401e3e9b19a47f4be54c3&amp;utm_campaign=openai-found-18-rare-diseases&amp;utm_medium=newsletter&amp;utm_source=www.theneurondaily.com">OpenAI&#39;s Reasoning Model Solves 18 Unsolvable Rare Disease Cases</a>
       </p>
-      <p class="story-summary">OpenAI and Molecule.one detailed how a near-autonomous AI chemist powered by GPT-5.4 successfully improved a challenging reaction used in medicinal chemistry. The system demonstrates the potential for AI to act as a collaborative research partner, advancing complex scientific workflows.</p>
-      <p class="story-why">&quot;This highlights the transition of AI from simple text generation to executing high-value, multi-step tasks in specialized scientific domains. It signals a near-future where autonomous agents deeply integrate into laboratory and research pipelines.&quot;</p>
-      <span class="signal-badge signal-medium">medium</span>
-    </div>
-    
-    <div class="story-card">
-      <p class="story-headline">
-        <a href="https://blog.google/innovation-and-ai/models-and-research/google-research/amie-for-disease-management-in-nature/">Google&#39;s AMIE Medical AI Matches Primary Care Physicians in Disease Management</a>
-      </p>
-      <p class="story-summary">Research published in Nature shows Google&#39;s AMIE conversational AI system successfully evolved from one-off diagnoses to long-term disease management. In a blinded study, specialist physicians rated AMIE equal to primary care doctors in management reasoning, while noting higher scores in plan preciseness and guideline alignment.</p>
-      <p class="story-why">&quot;This validates the use of specialized AI agents in complex, long-horizon clinical care, suggesting they can soon take over significant portions of chronic disease management and free up physician time.&quot;</p>
+      <p class="story-summary">Researchers leveraged OpenAI&#39;s o3 reasoning model to analyze complex medical histories, resulting in 18 new confirmed diagnoses for children with previously unsolved rare genetic diseases. The model demonstrated an ability to connect disparate, easily overlooked data points that human specialists had missed.</p>
+      <p class="story-why">&quot;This marks a significant step in AI evolving from a diagnostic aid to an autonomous analytical partner capable of tackling highly complex, open-ended medical mysteries.&quot;</p>
       <span class="signal-badge signal-medium">medium</span>
     </div>
     
@@ -382,47 +208,47 @@
     
     <div class="story-card">
       <p class="story-headline">
-        <a href="https://github.blog/ai-and-ml/github-copilot/getting-more-from-each-token-how-copilot-improves-context-handling-and-model-routing/">GitHub Copilot Upgrades Harness with Intelligent Model Routing and Context Caching</a>
+        <a href="https://www.youtube.com/watch?v=c8bE0cj7vCY">Harness Engineering: Designing Software Workflows Where Agents Execute and Humans Steer</a>
       </p>
-      <p class="story-summary">GitHub detailed significant upgrades to its Copilot agent harness, introducing a custom routing model called HyDRA that dynamically selects the best LLM based on task complexity and real-time system health. The updates also include aggressive prompt caching and deferred tool loading to optimize token usage and reduce costs during long agentic coding sessions.</p>
-      <p class="story-why">&quot;This is a textbook example of harness engineering—treating agent errors as configuration problems rather than model limitations. By intelligently managing context and routing tasks, platforms can extract significantly better performance and economics from existing models.&quot;</p>
+      <p class="story-summary">A new paradigm called &#39;harness engineering&#39; is gaining traction, focusing on building the necessary context, constraints, and oversight systems required to safely deploy coding agents. As models gain autonomous execution capabilities, development teams are realizing that human work is shifting from writing code to steering and managing agent workflows.</p>
+      <p class="story-why">&quot;This framework defines the next era of software development, establishing best practices for agent orchestration, context engineering, and human-in-the-loop safety rails.&quot;</p>
       <span class="signal-badge signal-high">high</span>
     </div>
     
     <div class="story-card">
       <p class="story-headline">
-        <a href="https://www.oreilly.com/radar/agent-harness-engineering/">The Rise of Harness Engineering: Scaffolding is the New Differentiator</a>
+        <a href="https://substack.com/redirect/c495efe7-9d89-40cd-9106-d40989f86334?j=eyJ1IjoiODg3NHRjIn0.lVsDUaqyAFmxYzbatnviq-TDam6f_pdobWlLewL0txo">Anthropic Ships Enterprise-Managed Authentication for MCP</a>
       </p>
-      <p class="story-summary">A comprehensive overview of &#39;harness engineering&#39; outlines how the scaffolding around AI models—encompassing tools, context policies, hooks, and subagents—matters more than the base model itself. The discipline advocates treating every agent mistake as a permanent signal to update a ratcheting set of rules and system prompts.</p>
-      <p class="story-why">&quot;As models converge in capability, the competitive frontier for AI products has shifted to the orchestration layer. Harness engineering establishes the mental model and best practices needed to build reliable, autonomous multi-agent systems.&quot;</p>
+      <p class="story-summary">Anthropic has introduced enterprise-managed authentication for the Model Context Protocol (MCP), allowing organizations to securely connect Claude to internal tools and data. This update enables centralized access control, ensuring that AI agents operate strictly within authorized enterprise boundaries.</p>
+      <p class="story-why">&quot;Robust identity and access management is a critical prerequisite for enterprise agent adoption, enabling safe, automated orchestration across complex internal corporate systems.&quot;</p>
       <span class="signal-badge signal-high">high</span>
     </div>
     
     <div class="story-card">
       <p class="story-headline">
-        <a href="https://www.together.ai/blog/kimi-k2-7-code-vs-claude-fable-5">Benchmark Shows Open-Source Coding Agents Catching Up to Proprietary Models at 94% Less Cost</a>
+        <a href="https://claude.ai/login?returnTo=%2Fdesign">Anthropic Launches Claude Design to Build UIs from GitHub Design Systems</a>
       </p>
-      <p class="story-summary">A Together.ai experiment generating landing pages found that Kimi K2.7 Code produced results comparable to Claude Fable 5 but cost 94% less per generation. The biggest quality improvements came not from swapping models, but from providing better visual context to the open-source model via a custom MCP server.</p>
-      <p class="story-why">&quot;It proves that with proper context engineering and MCP integration, significantly cheaper open-source models can be highly competitive with top-tier proprietary models for real-world development workflows.&quot;</p>
-      <span class="signal-badge signal-high">high</span>
-    </div>
-    
-    <div class="story-card">
-      <p class="story-headline">
-        <a href="https://cursor.com/origin-waitlist">Cursor Announces &#39;Origin&#39;, a Git Hosting Platform Built for AI Agents</a>
-      </p>
-      <p class="story-summary">Following its massive acquisition by SpaceX, Cursor launched Origin, a new code storage and repository hosting platform optimized for AI agent workloads. The platform is designed to handle merge conflicts, team-agent collaboration, and high-frequency agentic commits better than traditional version control systems.</p>
-      <p class="story-why">&quot;As agentic coding tools generate code at unprecedented volumes, traditional developer infrastructure is becoming a bottleneck. Origin signals a shift towards rebuilding core DevOps tools natively around the workflows of autonomous AI agents.&quot;</p>
+      <p class="story-summary">Anthropic has quietly launched Claude Design, a new capability that automatically imports a user&#39;s GitHub design system to generate accurate, compliant user interfaces. This allows the agentic coding tool to understand and replicate project-specific design tokens and components natively.</p>
+      <p class="story-why">&quot;By bridging the gap between code generation and design system context, Anthropic significantly improves the production-readiness of AI-generated user interfaces.&quot;</p>
       <span class="signal-badge signal-medium">medium</span>
     </div>
     
     <div class="story-card">
       <p class="story-headline">
-        <a href="https://www.latent.space/p/video-agents">Video Generation&#39;s Next Frontier: Agentic Orchestration Over Pure Diffusion</a>
+        <a href="https://www.youtube.com/watch?v=6vApvr2FgHc">Netlify CTO Champions &#39;Agent Experience&#39; as the New DX</a>
       </p>
-      <p class="story-summary">In a deep dive, former xAI engineer Ethan He argues that the next leap in video generation won&#39;t come from bigger diffusion models, but from &#39;video agents&#39;—language models orchestrating the generation, editing, and stitching of clips via deterministic tools. He notes that most visual intelligence gains are actually derived from the reasoning capabilities of the underlying LLM.</p>
-      <p class="story-why">&quot;This mirrors the trajectory of coding agents, shifting from one-shot generation to multi-turn reasoning and tool use. It suggests a unified architectural future where LLMs act as master orchestrators across all media types.&quot;</p>
+      <p class="story-summary">Systems built entirely for human consumption are beginning to break as AI agents increasingly navigate documentation and APIs to execute tasks autonomously. Netlify CTO Dana Lawson argues that the industry must now optimize for &#39;agent experience&#39; (AX), ensuring infrastructure is legible and navigable to automated systems.</p>
+      <p class="story-why">&quot;Optimizing developer infrastructure for AI agents rather than just humans is becoming a mandatory competitive advantage for platforms seeking agentic ecosystem adoption.&quot;</p>
       <span class="signal-badge signal-medium">medium</span>
+    </div>
+    
+    <div class="story-card">
+      <p class="story-headline">
+        <a href="https://www.technologyreview.com/2026/06/05/1138437/the-meta-hack-shows-theres-more-to-ai-security-than-mythos/">Meta&#39;s AI Support Agent Hack Highlights Critical Blind Spots in Agent Security</a>
+      </p>
+      <p class="story-summary">Attackers successfully hijacked high-profile Instagram accounts by simply tricking Meta&#39;s AI customer support agent into changing their linked emails. The exploit demonstrates that as companies rush to deploy autonomous agents, they are leaving glaring, unsophisticated vulnerabilities in the authorization guardrails surrounding them.</p>
+      <p class="story-why">&quot;It exposes the severe, real-world risks of deploying agentic systems without rigorous red-teaming, highlighting the urgent need for strict, code-based authorization constraints around agent actions.&quot;</p>
+      <span class="signal-badge signal-high">high</span>
     </div>
     
   </div>
@@ -433,37 +259,43 @@
     
     <div class="story-card">
       <p class="story-headline">
-        <a href="https://www.theverge.com/ai-artificial-intelligence/951703/anthropic-shutdown-export-controls">Unprecedented US Export Controls Force Anthropic to Shut Down Frontier Models</a>
+        <a href="https://www.theverge.com/podcast/951542/anthropic-claude-fable-5-mythos-ban-pentagon-ai-regulation-trump">US Government Forces Anthropic to Pull Fable 5 and Mythos Offline Globally</a>
       </p>
-      <p class="story-summary">The US Commerce Department issued an unprecedented export control directive that forced Anthropic to completely shut off access to its Fable 5 and Mythos 5 models for all users, including domestic employees. Experts warn the opaque, ad-hoc intervention stretches existing trade laws and creates massive uncertainty for frontier AI deployment.</p>
-      <p class="story-why">&quot;This marks the first major sovereign intervention against a deployed frontier AI model, establishing a volatile new precedent. It highlights the extreme geopolitical risks facing proprietary model providers and inadvertently serves as a massive advertisement for borderless open-weights.&quot;</p>
+      <p class="story-summary">The US Commerce Department issued a 90-minute ultimatum forcing Anthropic to shut off global access to its new Fable 5 model and underlying Mythos architecture due to alleged cybersecurity jailbreak risks. The unprecedented intervention caused chaos, severing access for foreign nationals and raising fears of erratic, unpredictable AI regulation.</p>
+      <p class="story-why">&quot;This establishes a massive precedent for sovereign intervention in frontier AI deployment, forcing the entire industry to account for extreme political and regulatory risks in their operational planning.&quot;</p>
       <span class="signal-badge signal-high">high</span>
     </div>
     
     <div class="story-card">
       <p class="story-headline">
-        <a href="https://www.theverge.com/column/951516/trump-anthropic-feud-mythos-fable-white-house">Political Friction and Opaque Mandates Cloud the Future of Frontier AI Deployment</a>
+        <a href="https://www.theverge.com/ai-artificial-intelligence/952837/barret-zoph-openai-thinking-machines-lab">OpenAI Loses Enterprise AI Head Barret Zoph After Five-Month Stint</a>
       </p>
-      <p class="story-summary">The White House intervention that forced Anthropic to shutter its frontier models appears driven as much by political friction and &#39;vibes&#39; as by hard national security logic. Observers note that without clear regulatory frameworks, frontier labs face unpredictable operational risks depending on their relationship with the current administration.</p>
-      <p class="story-why">&quot;In the absence of formal AI legislation, political dynamics are dictating the pace of AI rollout. This instability forces AI labs to prioritize regulatory caution and political navigation over pure technical execution.&quot;</p>
+      <p class="story-summary">Barret Zoph has departed OpenAI just five months after returning from Mira Murati&#39;s Thinking Machines Lab to lead the company&#39;s enterprise AI sales division. The departure represents a significant setback for OpenAI&#39;s strategy to focus on core enterprise revenue drivers ahead of its planned IPO.</p>
+      <p class="story-why">&quot;Leadership instability in key enterprise roles threatens OpenAI&#39;s ability to convert widespread consumer AI usage into durable, high-margin corporate revenue streams.&quot;</p>
       <span class="signal-badge signal-medium">medium</span>
     </div>
     
     <div class="story-card">
       <p class="story-headline">
-        <a href="https://arstechnica.com/ai/2026/06/ai-coding-agents-can-autonomously-direct-robot-training/">Nvidia&#39;s ENPIRE Framework Uses AI Coding Agents to Autonomously Train Robots</a>
+        <a href="https://www.theverge.com/tech/952099/adobe-ai-assistants-photoshop-premiere-illustrator-beta-launch">Adobe Embeds Task-Specific AI Agents Across Creative Cloud Suite</a>
       </p>
-      <p class="story-summary">Nvidia&#39;s GEAR lab introduced ENPIRE, an agent harness framework that allows AI coding agents like Claude Code and Codex to autonomously direct robot training. The agents independently develop algorithms, refine policies, and evaluate physical robots in parallel, successfully teaching them complex tasks like inserting GPUs and cutting zip ties overnight.</p>
-      <p class="story-why">&quot;This demonstrates a closed-loop system where agentic coding tools bridge the gap between digital task execution and physical world embodiment. It points toward a near future of self-improving robotic fleets managed by autonomous software engineers.&quot;</p>
-      <span class="signal-badge signal-high">high</span>
+      <p class="story-summary">Adobe has rolled out bespoke, chatbot-based AI assistants across Photoshop, Premiere, and Illustrator that can understand and execute complex, multi-step application tasks. The agents act as workflow orchestrators, handling tedious setup work like organizing timelines, renaming clips, and configuring design layers via natural language prompts.</p>
+      <p class="story-why">&quot;This signals a shift from simple generative AI features to functional agentic automation embedded directly into legacy professional software, fundamentally changing creative workflows.&quot;</p>
+      <span class="signal-badge signal-medium">medium</span>
     </div>
+    
+  </div>
+  
+  <div class="category">
+    <h2 class="category-name">Bluesky Highlights</h2>
+
     
     <div class="story-card">
       <p class="story-headline">
-        <a href="https://blog.google/innovation-and-ai/sundar-pichai-io-2026/">Google Launches Gemini Spark and Antigravity 2.0 for 24/7 Personal Agent Orchestration</a>
+        <a href="https://bsky.app/profile/christoph.nkzw.tech/post/3mngeysfbms2e">Christoph Nakazawa Shares His Latest LLM Workflow and Modern Engineering Values</a>
       </p>
-      <p class="story-summary">At I/O 2026, Google introduced Gemini 3.5 Flash alongside Antigravity 2.0, a platform evolving from a coding environment into a central hub for orchestrating cohorts of autonomous agents. The company also launched Gemini Spark, a 24/7 personal agent that operates on dedicated cloud VMs to perform long-horizon tasks across tools via MCP integration.</p>
-      <p class="story-why">&quot;Google&#39;s pivot to a unified agent harness via Antigravity and MCP integration signals the industry&#39;s move toward interconnected, always-on agent ecosystems. It represents a major push to make autonomous orchestration a standard consumer and enterprise utility.&quot;</p>
+      <p class="story-summary">Christoph Nakazwa details how he integrates LLMs into his day-to-day software engineering processes while redefining his core engineering values for the AI era.</p>
+      <p class="story-why">&quot;As a highly respected engineering leader, Nakazawa&#39;s practical workflows and evolving philosophical approach to AI provide a valuable, real-world blueprint for modern software development teams.&quot;</p>
       <span class="signal-badge signal-high">high</span>
     </div>
     
@@ -475,28 +307,28 @@
     
     <div class="story-card">
       <p class="story-headline">
-        <a href="https://x.com/liu_mingyu/status/2061525730996240738">NVIDIA Cosmos 3 Dominates Open Model Leaderboards</a>
+        <a href="https://x.com/OpenAIDevs/status/2067681320281723113">OpenAI Launches Codex Record &amp; Replay Feature</a>
       </p>
-      <p class="story-summary">NVIDIA released Cosmos 3, which immediately took the top spots across 8+ open model leaderboards for world reasoning, image, and video generation.</p>
-      <p class="story-why">&quot;NVIDIA is aggressively expanding beyond hardware into the software ecosystem. Establishing SOTA across multiple modalities signals a major shift in the competitive landscape for generative AI models.&quot;</p>
+      <p class="story-summary">OpenAI&#39;s developer account announced a new &#39;Record &amp; Replay&#39; capability for Codex, allowing developers to capture and review their coding sessions.</p>
+      <p class="story-why">&quot;This provides software engineers with a powerful tool for debugging, collaboration, and reviewing AI-assisted code generation workflows.&quot;</p>
       <span class="signal-badge signal-high">high</span>
     </div>
     
     <div class="story-card">
       <p class="story-headline">
-        <a href="https://x.com/ctatedev/status/2055434061322039377">Zero: A New Programming Language Built Specifically for AI Agents</a>
+        <a href="https://x.com/ClaudeDevs/status/2067655887662272723">Anthropic Introduces Enterprise-Managed Auth for MCP</a>
       </p>
-      <p class="story-summary">Developer Chris Tate introduced &#39;Zero&#39;, a new systems programming language designed from the ground up to be faster, smaller, and easier for AI agents to use and repair.</p>
-      <p class="story-why">&quot;As AI agents increasingly write and maintain code, optimizing programming languages for machine consumption rather than human readability could fundamentally change how software is engineered.&quot;</p>
+      <p class="story-summary">Claude Developers announced native support for enterprise-managed authentication within the Model Context Protocol (MCP).</p>
+      <p class="story-why">&quot;This update removes a massive friction point for enterprise adoption, allowing IT administrators to securely manage data access and permissions for AI agents.&quot;</p>
       <span class="signal-badge signal-high">high</span>
     </div>
     
     <div class="story-card">
       <p class="story-headline">
-        <a href="https://x.com/trq212/status/2056418157305454805">Viral Prompting Technique: Maintaining HTML Implementation Notes</a>
+        <a href="https://x.com/OfficialLoganK/status/2051434527931953490">Gemini API Ships Webhooks for Long-Running AI Tasks</a>
       </p>
-      <p class="story-summary">A highly viral tweet shared a prompt engineering trick: instructing AI coding agents to maintain a running &#39;implementation-notes.html&#39; file to document their workflow and decision-making.</p>
-      <p class="story-why">&quot;This is a highly actionable workflow tweak that provides persistent context and transparency when managing autonomous coding agents on complex software engineering tasks.&quot;</p>
+      <p class="story-summary">Google&#39;s Gemini API now supports webhooks, vastly improving the developer experience for asynchronous workflows like batch processing and autonomous agents.</p>
+      <p class="story-why">&quot;Webhooks eliminate the need for wasteful polling in AI applications, making it significantly easier and cheaper for developers to build complex, long-running agentic systems.&quot;</p>
       <span class="signal-badge signal-high">high</span>
     </div>
     
@@ -505,139 +337,19 @@
 
   
   <div class="analytics-dashboard">
-    <div class="analytics-header">📊 This Week in AI</div>
+    <div class="analytics-title">📊 Analytics</div>
 
     
-    <div class="signal-density-section">
-      <p class="signal-density-label">📡 Signal Density</p>
-      
-      
-        
-      
-      <div class="signal-density-bar-bg">
-        <div class="signal-density-bar-fill density-fill-mid" style="width:47%"></div>
-      </div>
-      <p class="signal-density-meta">
-        15 stories today
-        · ▼ 6% below average
-         (16 avg)
-      </p>
-    </div>
-    
-
-    
-    <div class="movers-section">
-      <p class="movers-section-title">🔥 Top Movers</p>
-      <table class="movers-grid"><tr>
-        
-        <td class="movers-col movers-col-left">
-          <p class="mover-direction-label mover-rising-label">▲ Rising</p>
-          
-          <div class="mover-item">
-            <p class="mover-topic-label">Agentic Infrastructure Maturation</p>
-            <p class="mover-meta">
-              <span class="mover-sparkline">▃▃█▅▂▄▄▄▃▅▂▄▅▄▄█▂▁▃▄▆▅▄▃▁▁▅▅▅▄▂▂▆▃▅▅▆</span>
-              · <span class="mover-ratio-rising">1.3x</span>
-              · 448 mentions
-            </p>
-          </div>
-          
+    <table role="presentation" class="analytics-twocol" width="100%" cellpadding="0" cellspacing="0" style="border-collapse:collapse">
+      <tr>
+        <td width="50%" style="padding:0 6px 12px 0;vertical-align:top">
+          <img src="cid:radar" alt="Coverage focus radar" style="width:100%;max-width:280px;height:auto">
         </td>
-        
-        
-      </tr></table>
-    </div>
-    
-
-    
-    <div class="entity-section">
-      <p class="entity-section-title">🏆 Key Players</p>
-      
-      <div class="entity-item">
-        <p class="entity-name">openai</p>
-        <div class="entity-bar-row">
-          <div class="entity-bar-bg">
-            <div class="entity-bar-track">
-              <div class="entity-bar-fill" style="width:100%"></div>
-            </div>
-          </div>
-          <div class="entity-count">15</div>
-        </div>
-        
-        <p class="entity-connected">Agentic Infrastructure Maturation, Real-World Agent &amp; Coding Benchmarks, US Government Intervention in AI Model Deployment</p>
-        
-      </div>
-      
-      <div class="entity-item">
-        <p class="entity-name">anthropic</p>
-        <div class="entity-bar-row">
-          <div class="entity-bar-bg">
-            <div class="entity-bar-track">
-              <div class="entity-bar-fill" style="width:100%"></div>
-            </div>
-          </div>
-          <div class="entity-count">15</div>
-        </div>
-        
-        <p class="entity-connected">Agentic Infrastructure Maturation, Real-World Agent &amp; Coding Benchmarks, US Government Intervention in AI Model Deployment</p>
-        
-      </div>
-      
-      <div class="entity-item">
-        <p class="entity-name">claude-code</p>
-        <div class="entity-bar-row">
-          <div class="entity-bar-bg">
-            <div class="entity-bar-track">
-              <div class="entity-bar-fill" style="width:47%"></div>
-            </div>
-          </div>
-          <div class="entity-count">7</div>
-        </div>
-        
-        <p class="entity-connected">Agentic Infrastructure Maturation, Real-World Agent &amp; Coding Benchmarks, Agent Orchestration Architecture</p>
-        
-      </div>
-      
-      <div class="entity-item">
-        <p class="entity-name">codex</p>
-        <div class="entity-bar-row">
-          <div class="entity-bar-bg">
-            <div class="entity-bar-track">
-              <div class="entity-bar-fill" style="width:40%"></div>
-            </div>
-          </div>
-          <div class="entity-count">6</div>
-        </div>
-        
-        <p class="entity-connected">Agentic Infrastructure Maturation, Real-World Agent &amp; Coding Benchmarks, Agent Orchestration Architecture</p>
-        
-      </div>
-      
-      <div class="entity-item">
-        <p class="entity-name">google</p>
-        <div class="entity-bar-row">
-          <div class="entity-bar-bg">
-            <div class="entity-bar-track">
-              <div class="entity-bar-fill" style="width:40%"></div>
-            </div>
-          </div>
-          <div class="entity-count">6</div>
-        </div>
-        
-        <p class="entity-connected">Agentic Infrastructure Maturation, Native Multimodal &amp; Long-Context Models, Real-World Agent &amp; Coding Benchmarks</p>
-        
-      </div>
-      
-    </div>
-    
-
-    <div class="analytics-footer">
-      249 topics tracked · 33 active
-      
-      
-       · 12 articles · 3 twitter
-      
-    </div>
+        <td width="50%" style="padding:0 0 12px 6px;vertical-align:top">
+          <img src="cid:sunburst" alt="Source hierarchy sunburst" style="width:100%;max-width:280px;height:auto">
+        </td>
+      </tr>
+    </table>
   </div>
   
 
